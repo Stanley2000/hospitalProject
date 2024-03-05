@@ -14,6 +14,7 @@ const sendProdError = (err, res) => {
       message: err.message,
     });
   } else {
+    console.log(err);
     console.log("Error in production");
     res.status(500).json({
       message: "Something happened",
