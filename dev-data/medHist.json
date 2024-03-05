@@ -1,0 +1,32 @@
+[
+  {
+    "cheifComplaint": "Stomach ache",
+    "historyOfPresenIllness": {
+      "syptoms": "Constant stomach pain",
+      "duration": "3 days",
+      "severity": "not too servere"
+    },
+    "physicalExaminationFindings": {
+      "bodyTemperature": 30,
+      "heartBeat": 21,
+      "respirationRate": 12
+    },
+    "DiagnosticTest": "Typhoid fever",
+    "user": "65e0b35571d00bd47f4ceef4"
+  },
+  {
+    "cheifComplaint": "Head ache",
+    "historyOfPresenIllness": {
+      "syptoms": "Pains",
+      "duration": "3 days",
+      "severity": "not too servere"
+    },
+    "physicalExaminationFindings": {
+      "bodyTemperature": 30,
+      "heartBeat": 31,
+      "respirationRate": 24
+    },
+    "DiagnosticTest": "Maleria typhoid",
+    "user": "65e0b35571d00bd47f4ceef4"
+  }
+]
