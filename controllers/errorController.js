@@ -42,17 +42,26 @@ const globalErrorController = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
 
-  if (process.env.NODE_ENV === "development") devError(err, res);
-  else if (process.env.NODE_ENV === "production") {
-    let error = { ...err };
+  // if (process.env.NODE_ENV === "development") devError(err, res);
+  // else if (process.env.NODE_ENV === "production") {
+  //   let error = { ...err };
 
-    if (err.name === "CastError") error = handleCastErrorDB(error);
-    if (err.name === "ValidationError") error = handleValidationErrorDB(error);
-    if (err.name === "JsonWebTokenError") error = handleJWTError();
-    if (err.name === "TokenExpiredError") error = handleExpiredJWT();
+  //   if (err.name === "CastError") error = handleCastErrorDB(error);
+  //   if (err.name === "ValidationError") error = handleValidationErrorDB(error);
+  //   if (err.name === "JsonWebTokenError") error = handleJWTError();
+  //   if (err.name === "TokenExpiredError") error = handleExpiredJWT();
 
-    sendProdError(error, res);
-  }
+  //   sendProdError(error, res);
+  // }
+
+  let error = { ...err };
+
+  if (err.name === "CastError") error = handleCastErrorDB(error);
+  if (err.name === "ValidationError") error = handleValidationErrorDB(error);
+  if (err.name === "JsonWebTokenError") error = handleJWTError();
+  if (err.name === "TokenExpiredError") error = handleExpiredJWT();
+
+  sendProdError(error, res);
 };
 
 module.exports = globalErrorController;
