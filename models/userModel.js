@@ -20,7 +20,7 @@ const userSchema = mongoose.Schema(
         validator: function (value) {
           return /^[0-9]{11}$/.test(value);
         },
-        message: "Please provide a valide number",
+        message: "Please provide a valid phone number",
       },
     },
     email: {

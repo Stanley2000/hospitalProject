@@ -10,11 +10,9 @@ const devError = (err, res) => {
 };
 const sendProdError = (err, res) => {
   if (err.isOperational) {
-    console.log("err.message: ", err.message);
-    console.log("err.status", err.status);
     res.status(err.statusCode).json({
       status: err.status,
-      message: err.message,
+      message: err.message || err.errorMessage,
     });
   } else {
     res.status(500).json({
