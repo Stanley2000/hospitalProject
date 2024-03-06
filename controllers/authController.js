@@ -21,7 +21,7 @@ exports.login = catchAsync(async (req, res, next) => {
   const { password, email } = req.body;
   const staff = await Staff.findOne({ password, email });
 
-  if (!staff) return next(new AppError("Invalid password  or password", 403));
+  if (!staff) return next(new AppError("Invalid password  or email", 403));
 
   res.status(200).json({
     status: "success",
