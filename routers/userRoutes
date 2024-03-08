@@ -4,7 +4,7 @@ const authController = require("../controllers/authController");
 const medHistController = require("../controllers/medHistController");
 
 router.route("/create").post(userController.createUser);
-router.use(authController.protect);
+// router.use(authController.protect);
 router.route("/").get(userController.getAllPatients);
 
 router.route("/:patientID").get(userController.getPatientDetails);
