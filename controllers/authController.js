@@ -23,6 +23,16 @@ exports.login = catchAsync(async (req, res, next) => {
 
   if (!staff) return next(new AppError("Invalid password  or email", 403));
 
+  // const cookieOptions = {
+  //   expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
+  //   // secure: true,
+  //   httpOnly: true,
+  // };
+  // const token = signToken(staff._id);
+  // if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
+  // res.cookie("JWT", token, cookieOptions);
+  // // res.set("Authorization", `Bearer ${signToken(staff._id)}`);
+
   res.status(200).json({
     status: "success",
     data: {
